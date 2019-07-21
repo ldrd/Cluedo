@@ -18,7 +18,7 @@ namespace Server
 
         public void Start()
         {
-            clients = new List<ServerClient>(6); //TODO : Replace 6 by a const
+            clients = new List<ServerClient>(6);
             disconnectClients = new List<ServerClient>();
 
             try

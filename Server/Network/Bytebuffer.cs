@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Server.Network
 {
-    class Bytebuffer
+    public class Bytebuffer
     {
         private int rpos = 0;
         protected List<byte> data;

@@ -1,21 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Server.Network
 {
-    abstract class Packet : Bytebuffer
+    public abstract class Packet
     {
-        public Packet(Packet packet)
+        public Packet(WorldPacket worldPacket)
         {
-            data = new List<byte>(packet.GetData());
+            this.worldPacket = worldPacket;
             Read();
         }
 
-        public Packet() { }
+        public WorldPacket GetWorldPacket() => worldPacket;
 
-        public abstract void Read();
+        protected Packet() { }
+
+        protected abstract void Read();
+
+        protected WorldPacket worldPacket;
     }
 }
