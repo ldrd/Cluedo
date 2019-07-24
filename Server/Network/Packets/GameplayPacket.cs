@@ -9,8 +9,7 @@ namespace Server.Network.Packets
     internal class GameplayPacket : Packet
     {
 
-        public static readonly UInt32 MASK_FUNCTION = 0xF8000000;
-        public static readonly byte SHIFT_POS_FUNCTION = 27;
+        public static readonly Int32 MASK_FUNCTION = 0x1F;
 
         public Int32 infos;
 
@@ -26,11 +25,6 @@ namespace Server.Network.Packets
         protected override void Read()
         {
             infos = worldPacket.Read<Int32>();
-        }
-
-        public int getFunctionNum()
-        {
-            return (int)(infos & MASK_FUNCTION >> SHIFT_POS_FUNCTION);
         }
     }
 }

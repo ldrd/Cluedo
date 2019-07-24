@@ -14,7 +14,7 @@ namespace Server.PacketManager
 
         public void Manage(WorldPacket worldpacket)
         {
-            actions[new GameplayPacket(worldpacket).getFunctionNum()]();
+            actions[new GameplayPacket(worldpacket).infos & GameplayPacket.MASK_FUNCTION]();
         }
     }
 }
