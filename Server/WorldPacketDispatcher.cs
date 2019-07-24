@@ -15,7 +15,7 @@ namespace Server
 
         public WorldPacketDispatcher()
         {
-            
+            link.Add(OpcodeMsg.GameplayPacket, new GameplayPacketManager());
         }
 
         public void Dispatch(WorldPacket worldPacket)
